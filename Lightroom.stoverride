@@ -1,0 +1,18 @@
+name: Unlock Lightroom @Sk-itsu
+desc: 解锁 Lightroom 高级功能
+
+http:
+  mitm:
+    - "photos.adobe.io"
+  script:
+    - match: ^https:\/\/photos\.adobe\.io\/v2\/accounts
+      name: Unlock_Lightroom
+      type: response
+      require-body: true
+      timeout: 10
+      argument:
+
+script-providers:
+  Unlock_Lightroom:
+    url: https://raw.githubusercontent.com/Sk-itsu/stoverride-Lightroom/main/lightroom.js
+    interval: 86400
